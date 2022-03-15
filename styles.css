@@ -14,29 +14,29 @@ body {
     border: 1px solid black;
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
 .topSymbol {
-    position: absolute;
-    top: 8px;
-    left: 20px;
     font-size: 80px;
+    text-align: left; 
+    padding-left: 2%;
 }
 
 .bottomSymbol {
-    position: absolute;
-    bottom: 8px;
-    right: 20px;
+
     font-size: 80px;
     transform: rotate(180deg);
+    text-align: left;
+    padding-left: 2%;
 }
 
 .number {
-    position: absolute;
-    top: 150px;
-    right: 110px;
-    left: 100px;
+
+    text-align: center;
     font-size: 100px; 
 }
 
@@ -56,6 +56,30 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: center;   
+}
+
+.userInputs {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 1%;
+    width: 17%;
+    justify-content: center;
     
+    
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+    background-color: red;
+}
+
+.inputSpan {
+    
+    color: white;
+    font-weight: bold;
+    padding-left: 2%;
 }

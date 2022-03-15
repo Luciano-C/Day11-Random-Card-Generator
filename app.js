@@ -21,6 +21,9 @@ let cardNumber = document.querySelector(".number");
 let bottomSuit = document.querySelector(".bottomSymbol");
 let cardContainer = document.querySelector(".card")
 let button = document.querySelector(".btn1");
+let cardHeight = document.querySelector(".height");
+let cardWidth = document.querySelector(".width");
+
 
 
 // Funcion para cambiar objetos en página
@@ -46,4 +49,13 @@ button.addEventListener("click", generateCard);
 // setInterval(function, milliseconds)
 window.setInterval(generateCard, 10000);
 
+// Eventos height y width
+cardHeight.addEventListener("change", () => { 
+    cardHeight.value !== "" ? cardContainer.style.height = `${cardHeight.value}px`: cardContainer.style.height = "400px";
+});
+
+
+cardWidth.addEventListener("change", () => {
+    cardWidth.value !== "" ? cardContainer.style.width = `${cardWidth.value}px`: cardContainer.style.width = "250px";
+})
 
