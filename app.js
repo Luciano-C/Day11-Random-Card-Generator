@@ -50,6 +50,8 @@ button.addEventListener("click", generateCard);
 window.setInterval(generateCard, 10000);
 
 // Eventos height y width
+
+// Si los valores en input son vacíos, vuelve a sus valores por defecto.
 cardHeight.addEventListener("change", () => { 
     cardHeight.value !== "" ? cardContainer.style.height = `${cardHeight.value}px`: cardContainer.style.height = "400px";
 });
