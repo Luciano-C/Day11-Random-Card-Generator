@@ -2,7 +2,7 @@ class Card {
     constructor(number, suit) {
         this.number = number;
         this.suit = suit;
-        this.color = (this.suit === "♦" || this.suit === "♥") ? "red" : (this.suit === "♠" || this.suit === "♣") ? "black" : "blue";
+        this.color = (this.suit === "♦" || this.suit === "♥") ? "red" : "black";
     }
 }
 
