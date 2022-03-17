@@ -31,7 +31,7 @@ const generateCard = () => {
     let objectCardNumber = pickRandomFromArray(possibleNumbers);
     let objectCardSuit = pickRandomFromArray(possibleSuits);
     let cardObject = new Card(objectCardNumber, objectCardSuit);
-    
+
     topSuit.innerHTML = cardObject.suit;
     bottomSuit.innerHTML = cardObject.suit;
     cardNumber.innerHTML = cardObject.number;
@@ -43,21 +43,32 @@ const generateCard = () => {
 window.onload = generateCard;
 
 // Funcionalidad botón
-button.addEventListener("click", generateCard);
+/* button.addEventListener("click", generateCard);
+button.addEventListener("click", resetInterval); */
+button.addEventListener("click", () => {
+    generateCard();
+    resetInterval();
+});
 
 // Cambiar carta cada 10 segundos
 // setInterval(function, milliseconds)
-window.setInterval(generateCard, 10000);
+let myInterval = setInterval(generateCard, 10000);
+
+// Función que permite al botón resetear el intervalo cuando se hace click
+
+let resetInterval = () => {
+    clearInterval(myInterval);
+    myInterval = setInterval(generateCard, 10000);
+}
 
 // Eventos height y width
-
 // Si los valores en input son vacíos, vuelve a sus valores por defecto.
-cardHeight.addEventListener("change", () => { 
-    cardHeight.value !== "" ? cardContainer.style.height = `${cardHeight.value}px`: cardContainer.style.height = "400px";
+cardHeight.addEventListener("change", () => {
+    cardHeight.value !== "" ? cardContainer.style.height = `${cardHeight.value}px` : cardContainer.style.height = "400px";
 });
 
 
 cardWidth.addEventListener("change", () => {
-    cardWidth.value !== "" ? cardContainer.style.width = `${cardWidth.value}px`: cardContainer.style.width = "250px";
+    cardWidth.value !== "" ? cardContainer.style.width = `${cardWidth.value}px` : cardContainer.style.width = "250px";
 })
 
