@@ -43,8 +43,6 @@ const generateCard = () => {
 window.onload = generateCard;
 
 // Funcionalidad botón
-/* button.addEventListener("click", generateCard);
-button.addEventListener("click", resetInterval); */
 button.addEventListener("click", () => {
     generateCard();
     resetInterval();
